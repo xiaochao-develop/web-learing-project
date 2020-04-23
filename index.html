@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Web开发学习</title>
+        <meta charset="utf-8" />
+        <style>
+            #container {
+                display: flex;
+                flex-direction: row;
+            }
+
+            #container a {
+                background-color: blue;
+                padding: 20px;
+                margin: 10px;
+                border-radius: 5px;
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+            <a href="/html/html-index.html" target="_blank">HTML</a>
+            <a href="/html/css-index.html">CSS</a>
+            <a href="/html/js-index.html">JavaScript</a>
+        </div>
+
+        <script>
+            window.onload = function () {
+                var container = document.getElementById('container');
+                var links = container.getElementsByTagName('a');
+                for (let i = 0; i < links.length; i++) {
+                    links[i].onclick = function () {
+                        var hrefvalue = links[i].getAttribute('href')
+                        window.location.href = hrefvalue
+                        return false
+                    }
+                }
+            }
+        </script>
+    </body>
+
+</html>
